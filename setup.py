@@ -8,7 +8,7 @@ setuptools.setup(
     description="Open Source Pi Clusters manager",
     long_description="",
     long_description_content_type="text/markdown",
-    url="https://github.com/Lukas0025/PSNN",
+    url="https://github.com/Lukas0025/piClusterManager",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
