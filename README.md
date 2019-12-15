@@ -6,7 +6,7 @@ Open source Manager for PI clusters
 pip3 install piClusterManager
 ```
 ## fisrt run
-you can setup cluster manager only when you have **new instalation of raspberian**, you **do not change passwords** and you have **enable SSH**
+you can setup cluster manager only when you have **new instalation of raspberian**, **not change passwords** and  **enabled SSH**
 
 then you can write
 ```sh
