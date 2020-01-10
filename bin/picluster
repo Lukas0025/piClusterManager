@@ -86,7 +86,7 @@ if args.setup:
         # wait 10s
         time.sleep(10)
         # kill theard for listen hello packets
-        nf.listener.terminate()
+        # some like nf.listener.terminate()
         
         #print finded nodes
         print("Finded nodes:\n")
