@@ -199,8 +199,13 @@ elif args.dockerSwarmSetup:
                 node.close()
 
             master_hostname = socket.gethostname()
-            # get IP of current node
-            master_IPAddr = socket.gethostbyname(master_hostname)
+            # get IP of current node using connect to another node
+            test_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            test_sock.connect((nodes[0], 80))
+            # get my IP
+            master_IPAddr = socket.gethostbyname(test_sock.getsockname()[0])
+            
+            test_sock.close()
 
             print("setuping master on {} on IP {}".format(master_hostname, master_IPAddr))
             # setup master on current node
