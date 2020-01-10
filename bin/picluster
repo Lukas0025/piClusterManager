@@ -104,7 +104,7 @@ if args.setup:
             for nodeIP in nf.nodes:
                 # login on node with default login
                 node = node_manager(nodeIP, "pi", "raspberry")
-                print("set new password on {}".format(node))
+                print("set new password on {}".format(nodeIP))
                 # set new password
                 node.set_password(password)
                 print("set no hello on {}".format(nodeIP))
@@ -171,7 +171,7 @@ elif not(args.execute is None):
             node = node_manager(nodeIP, "pi", password)
             print("\n\nexecute on {}\n\n".format(nodeIP))
             # exec command on node
-            print(node.exec(args.execute))
+            print(node.exec(args.execute).decode("utf-8"))
             # close comunication
             node.close()
     else:

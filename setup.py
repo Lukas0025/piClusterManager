@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="piClusterManager",
-    version="0.1.2",
+    version="0.1.3",
     author="Lukáš Plevač",
     author_email="lukasplevac@gmail.com",
     description="Open Source Pi Clusters manager",

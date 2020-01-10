@@ -62,7 +62,6 @@ class node_finder:
 	@return None
 	'''	
 	def listener_hello(self):
-		print("theard")
 		while True:
 			data, addr = self.sock.recvfrom(1024)
 			if data == self.config.hello_packet:
