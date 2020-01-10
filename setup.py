@@ -1,12 +1,15 @@
 import setuptools
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setuptools.setup(
     name="piClusterManager",
-    version="0.1.0",
+    version="0.1.2",
     author="Lukáš Plevač",
     author_email="lukasplevac@gmail.com",
     description="Open Source Pi Clusters manager",
-    long_description="",
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Lukas0025/piClusterManager",
     packages=setuptools.find_packages(),
