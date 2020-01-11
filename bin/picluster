@@ -210,8 +210,12 @@ elif args.dockerSwarmSetup:
             print("setuping master on {} on IP {}".format(master_hostname, master_IPAddr))
             # setup master on current node
             master = node_manager(master_IPAddr, "pi", password)
+            # setup master
+            master.docker_setup_master(master_IPAddr)
             # get join token
-            token = master.docker_setup_master(master_IPAddr)
+            token = master.get_join_token()
+            # print token
+            print("token is: {}".format(token))
             # close comunication
             master.close()
 

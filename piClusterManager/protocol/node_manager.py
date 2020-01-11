@@ -103,7 +103,14 @@ class node_manager:
     def docker_setup_master(self, out_ip):
         self.exec("sudo usermod -aG docker pi")
         self.exec("sudo docker swarm init --advertise-addr {}".format(out_ip))
-        return self.exec("sudo docker swarm join-token -q")
+
+    '''
+    get docker swarm join token
+    @param self
+    @return str token
+    '''
+    def get_join_token(self):
+        return self.exec("sudo docker swarm join-token worker -q").decode("utf-8").rstrip()
 
     '''
     setup node as docker swarm worker
@@ -113,7 +120,7 @@ class node_manager:
     @return None
     '''
     def docker_setup_worker(self, token, master_ip):
-        self.exec("sudo docker swarm join --token {} {}:2377".format(token, master_ip))
+        return self.exec("sudo docker swarm join --token {} {}:2377".format(token, master_ip))
 
     '''
     install docker compose on node
